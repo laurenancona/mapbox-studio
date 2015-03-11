@@ -21,7 +21,7 @@ if [ $PLATFORM == "linux" ] && [ -n "$GITSHA" ]; then
     aws s3 cp --acl=public-read index.html s3://mapbox/mapbox-studio/index.html
 elif [ $PLATFORM == "darwin" ] && [ -n "$GITSHA" ]; then
     echo "Publishing $GITSHA"
-    brew install python
+    # brew install python
     pip install -q awscli
     ./scripts/build-atom.sh "$GITSHA" darwin
 fi
